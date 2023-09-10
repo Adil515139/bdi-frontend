@@ -1,0 +1,40 @@
+<form class="addTask" [formGroup]="task" (ngSubmit)="onSubmit()">
+	<h4 class="addEmployeeHeader">
+		Task Create
+	</h4>
+	<br>
+
+<br>
+	<label>Title</label>
+	<input type="text" name="title" formControlName="title">
+    <div *ngIf="task?.get('title')?.hasError('required') ?? false" class="error-message">
+        Title is required.
+    </div>
+	<br>
+
+	<label>Description</label>
+	<input type="text" name="description" formControlName="description" required >
+    <div *ngIf="task?.get('description')?.hasError('required') ?? false" class="error-message">
+        Description is required.
+    </div>
+
+	<br>
+	<label>Priority</label>
+	<input type="text" name="priority" formControlName="priority">
+    <div *ngIf="task?.get('priority')?.hasError('required') ?? false" class="error-message">
+        Priority is required.
+    </div>
+<br>
+<br>
+	<input type="button" class="button redButton" value="Cancel">
+	<input class="button blueButton" type="submit" value="Create">
+	<br>
+  <!-- <p>{{credentials | json}}</p> -->
+</form>
+
+  <!--  -->
+
+
+
+
+

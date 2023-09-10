@@ -1,0 +1,53 @@
+
+<form class="listTask" >
+	<h4 class="addTaskHeader">
+		<b>Task List</b>
+	</h4>
+	<br>
+  <br>
+<button class="redButton" (click)="createTask()">Add</button>
+
+<table class="table" id="list">
+
+  <thead class="Tablehead">
+
+    <tr>
+
+
+        <th> Title </th>
+        <th> Descrition</th>
+        <th> Priority</th>
+        <th> Actions </th>
+
+    </tr>
+
+  </thead>
+
+
+
+  <tbody class="tablebody" >
+
+    <tr *ngFor = "let task of tasks" >
+        <!-- <td> {{ task.id }} </td> -->
+        <td> {{ task.title }} </td>
+        <td> {{ task.description }} </td>
+        <td> {{ task.priority }} </td>
+        <td>
+            <button (click) = "updateTask(task.id)" class = "btn btn-info"> Update</button>
+            <button (click) = "deleteTask(task.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button (click) = "taskDetails(task.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+        </td>
+    </tr>
+  </tbody>
+
+</table>
+
+<br>
+</form>
+
+  <!--  -->
+
+
+
+
+
